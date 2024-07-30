@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #e50914;
+    --dark-color:#141414;
+    /* It's like a global variable that can be reused anywhere */
+}
+* {
+    /* By using border-box, the padding and border are included in the width and height of the element. */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: black;
+    color: antiquewhite;
+}
+h1, h2, h3 {
+    color: white;
+}
+a {
+    color: aliceblue;
+    text-decoration: none;
+}
+p {
+    margin: 8px 0;
+    color: white;
+}
+.showcase-top {
+    position: relative;
+    height: 90px;
+    z-index: 2;
+}
+.showcase-top img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 90px; 
+    transform: translate(-50%, -50%);
+    /* The transform: translate(-50%, -50%); CSS rule is a powerful tool for centering an element within its container */
+}
+.showcase {
+    width: 100%;
+    height: 93vh;
+    position: relative;
+    background: url(../images/background.jpg) no-repeat center center/cover;
+}
+.showcase::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    box-shadow: inset 120px 100px 250px black,inset -120px -200px 250px black;
+}
+.showcase-top a {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+.showcase-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 9rem;
+    z-index: 2;
+}
+.showcase-content h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 2;
+}
+.showcase-content p {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 2rem;
+}
+.tabs{
+    background: var(--dark-color);
+    padding-top: 1rem;
+    border-bottom: 4px solid var(--dark-color) ;
+}
+.tab-content{
+    padding: 2rem 0;
+}
+.container{
+    max-width: 70%;
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+.tabs .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.tab-item{
+    padding: 1.5rem 0;
+}
+.tabs .container>div:hover{
+    cursor: pointer;
+    color: white;
+}
+.tab-border{
+    border-bottom: 4px solid var(--primary-color);
+}
+.tab-1-content-inner{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align :start;
+}
+#tab-1-content .tab-1-content-inner img {
+    max-width: 100%;
+    height: auto;
+}
+.tab-2-content-top{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+}
+.tab-2-content-bottom{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: center;
+    text-align: center;
+    grid-gap: 1rem;
+    overflow: hidden;
+}
+.tab-2-content-bottom div img {
+    max-width: 100%;
+    height: auto;
+}
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+	display: none;
+}
+
+.show {
+	display: block !important;
+	/* opacity: 1 !important;
+	transition: all 1000 ease-in; */
+}
+.table{
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+}
+.table thead th{
+    text-transform: uppercase;
+    padding: 0.8rem;
+}
+.table tbody tr td{
+    color: #999;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+}
+.table tbody tr td:first-child{
+    text-align: start;
+}
+.table tbody tr:nth-child(odd){
+    background: #222;
+}
+.footer{
+    max-width: 75%;
+    margin: 1rem auto;
+    overflow: auto;
+}
+.footer a{
+    color: #999;
+    font-size: 0.9rem;
+}
+.footer p{
+    margin-bottom: 2rem;
+}
+ul{
+    list-style: none;
+    line-height: 1.9;
+}
+.footer-cols{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2rem;
+}
+.btn {
+    display: inline-block;
+    margin-right: 1rem;
+    background: var(--primary-color);
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn:hover {
+    opacity: 0.8;
+}
+.btn-rounded {
+    border-radius: 5px;
+}
+.btn-lg {
+    font-size: 1rem;
+    padding: 1rem 1rem;
+}
+.btn-xl {
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+}
